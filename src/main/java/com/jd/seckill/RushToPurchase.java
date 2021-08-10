@@ -20,7 +20,7 @@ public class RushToPurchase implements Runnable {
         while (times < Start.ok) {
             String gate = null;
             try {
-                gate = HttpUrlConnectionUtil.get(Start.headers, "https://cart.jd.com/gate.action?pcount=1&ptype=1&pid=" + Start.pid);
+                gate = HttpUrlConnectionUtil.get(Start.headers, "https://cart.jd.com/gate.action?pcount="+Start.count+"&ptype=1&pid="+Start.pid);
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -22,6 +22,7 @@ public class Start {
     static String pid;
     static String  beginTime;
     static Integer preMillis;
+    static Integer count;
     public static  Long realTime;
     volatile static Integer ok;
     static String eid = "X";
@@ -31,7 +32,9 @@ public class Start {
         //输入商品编号
         System.out.print("商品编号：");
         pid = new Scanner(System.in).nextLine();
-        System.out.print("提前毫秒数");
+        System.out.print("购买数量：");
+        count = new Scanner(System.in).nextInt();
+        System.out.print("提前毫秒数：");
         preMillis = new Scanner(System.in).nextInt();
         System.out.print("开始时间：");
         beginTime = new Scanner(System.in).nextLine();
@@ -51,6 +54,7 @@ public class Start {
     }
 
     static CookieManager manager = new CookieManager();
+
 
     public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException, ParseException {
         CookieHandler.setDefault(manager);
