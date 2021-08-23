@@ -45,9 +45,8 @@ public class Start {
         }finally {
             System.out.println(realTime+"开始");
         }
-        //输入抢购次数
-        System.out.println("抢购次数:");
-        ok = new Scanner(System.in).nextInt();
+        //抢购次数
+        ok = 1;
         headers = new JSONObject();
         headers.put(Start.headerAgent, Start.headerAgentArg);
         headers.put(Start.Referer, Start.RefererArg);
