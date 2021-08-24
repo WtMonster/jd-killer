@@ -81,10 +81,11 @@ public class RushToPurchase implements Runnable {
                         Long serverTime = Long.valueOf(jdTime.get("currentTime2").toString());
 
                         if (Start.realTime - serverTime > 10000){
+                            System.out.println("进入倒计时！"+(Start.realTime - serverTime- 5000)/1000+"秒后激活程序");
                             Thread.sleep(Start.realTime - serverTime- 5000);
+                            System.out.println("程序激活，距离抢购开始还有"+(Start.realTime-(new Date().getTime()))+"ms");
                         }
                         if (Start.realTime <= serverTime) {
-
                             break;
                         }
                     }
