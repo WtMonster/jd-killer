@@ -79,7 +79,12 @@ public class RushToPurchase implements Runnable {
                             e.printStackTrace();
                         }
                         Long serverTime = Long.valueOf(jdTime.get("currentTime2").toString());
+
+                        if (Start.realTime - serverTime > 10000){
+                            Thread.sleep(Start.realTime - serverTime- 5000);
+                        }
                         if (Start.realTime <= serverTime) {
+
                             break;
                         }
                     }
@@ -122,7 +127,7 @@ public class RushToPurchase implements Runnable {
                     }
                 }
                 System.out.println("已抢购" + Start.ok + "件，请尽快完成付款");
-            } catch (IOException e) {
+            } catch (IOException | InterruptedException e) {
                 e.printStackTrace();
             }
 
