@@ -1,7 +1,7 @@
 ## 环境
 
 - Windows 10
-- Oracle JDK 8
+- Open JDK 8
 
 ## 使用
 
